@@ -1,5 +1,5 @@
 console.log("hello") //  added new lin
-
+console.log("added new line to create new branch and merge") //
 const my_Form = document.querySelector('#myForm')
 const btn = document.querySelector('.btn');
 const username= document.querySelector('#username')
