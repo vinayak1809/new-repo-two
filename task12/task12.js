@@ -14,10 +14,10 @@ function myfun(event) {
         mail
     }
 
-    localStorage.setItem(obj.mail, 77JSON.stringify(obj));
+    localStorage.setItem(obj.mail, JSON.stringify(obj));
     
     console.log(JSON.parse(localStorage.getItem(mail)))
-   7
+   
 
 }
  
