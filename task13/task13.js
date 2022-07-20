@@ -2,27 +2,28 @@
 var usersList = document.getElementById('usersList')
 
 function myfun(event) {
-   
-
     event.preventDefault();
     const name = event.target.username.value;
-    const phno = event.target.phno.value;
+    const age = event.target.age.value;
     const mail = event.target.mail.value;
 
     obj = {
         name,
-        phno,
+        age,
         mail
     }
-    localStorage.setItem(obj.mail, JSON.stringify(obj));
+
+    localStorage.setItem(obj.mail, JSON.stringify(obj));    
     console.log(JSON.parse(localStorage.getItem(mail)))
-   
 
 }
  
 window.addEventListener("DOMContentLoaded", () =>{
     for (const key of Object.keys(localStorage)) {
 
+        document.getElementById('username').value = "";
+        document.getElementById('mail').value = "";
+        document.getElementById('age').value ="";
 
         const ob = JSON.parse(localStorage.getItem(key))
 
@@ -34,13 +35,13 @@ window.addEventListener("DOMContentLoaded", () =>{
         var delBtn = document.createElement('button')
         delBtn.className = 'delete'
         mail = ob.mail
-        delBtn.setAttribute('onclick',`deleteUser(mail)`);
+        delBtn.setAttribute('onclick',`deleteUser('${mail}')`);
         delBtn.appendChild(document.createTextNode(" delete"))
 
         // edit button 
         var editBtn = document.createElement('button')
         editBtn.className = "edit"
-        editBtn.setAttribute('onclick',`editUser(mail)`)
+        editBtn.setAttribute('onclick',`editUser('${mail}')`)
         editBtn.appendChild(document.createTextNode(' edit'))
 
         newEle.appendChild(delBtn);
@@ -52,6 +53,7 @@ window.addEventListener("DOMContentLoaded", () =>{
 
 
 function deleteUser(user){
+            console.log('a')
             localStorage.removeItem(user);
     }
 
@@ -62,11 +64,12 @@ function editUser(user){
 
     let username = document.getElementById('username');
     let mail = document.getElementById('mail');
-    let age = document.getElementById('phno');
+    let age = document.getElementById('age');
 
     username.value = getItem.name
     mail.value = getItem.mail
-    age.value = getItem.phno
+    age.value = getItem.age
+
 }
 
 
@@ -75,11 +78,3 @@ function editUser(user){
 
 
 
-// function print_Users(user){
-//     const create = document.getElementById('usersList')
-//     const new_ele =  `<li> ${user.name} - ${user.mail}</li>`
-
-//     create.innerHTML = create.innerHTML + new_ele;
-// }
-
-// var store = localStorage.getItem

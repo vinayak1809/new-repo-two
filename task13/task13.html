@@ -1,21 +1,23 @@
 <html>
     <head>
+        <link rel="stylesheet" href="task13.css">
     </head>
     <body>
-        <form onsubmit="myfun(event)">
-            <label for="name">Name: </label>
-            <input type="text" id="username" name="username"><br>
+        <div class="container">
+            <form onsubmit="myfun(event)">
+                <label for="name">Name: </label>
+                <input type="text" id="username" name="username"><br>
 
-            <label for="mail">Email: </label>
-            <input type="email" id="mail" name="mail"><br>
+                <label for="mail">Email: </label>
+                <input type="email" id="mail" name="mail"><br>
 
-            <label for="phno">Phone Number: </label>
-            <input type="text" id="phno" name="phno"><br>
+                <label for="age">Age: </label>
+                <input type="text" id="age" name="age"><br>
 
-            <button>submit</button>
-        </form>
-        <ul id="usersList">
-        </ul>
+                <button>submit</button>
+            </form>
+            <ul id="usersList"></ul>
+        </div>
         <script src="task13.js"></script>
     </body>
 </html>

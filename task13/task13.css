@@ -1,0 +1,26 @@
+.container{
+    padding: 10px 30%;
+}
+
+form{
+padding: 20px;
+}
+
+label{
+    padding: 10px;
+    margin: 10px;
+}
+
+input{
+    margin: 10px;
+    width: 300px;
+    height: 30px;
+}
+
+form > button{
+    float: right;
+}
+
+li{
+    padding-right: 20px;
+}
